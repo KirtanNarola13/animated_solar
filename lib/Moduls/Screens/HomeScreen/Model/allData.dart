@@ -5,6 +5,7 @@ class AllData {
   String distance;
   String description;
   String image;
+  String color;
 
   AllData({
     required this.position,
@@ -13,15 +14,18 @@ class AllData {
     required this.distance,
     required this.description,
     required this.image,
+    required this.color,
   });
 
   factory AllData.fromJson({required Map data}) {
     return AllData(
-        position: data['position'],
-        name: data['name'],
-        velocity: data['velocity'],
-        distance: data['distance'],
-        description: data['description'],
-        image: data['image']);
+      position: data['position'],
+      name: data['name'],
+      velocity: data['velocity'],
+      distance: data['distance'],
+      description: data['description'],
+      image: data['image'],
+      color: data['color'],
+    );
   }
 }
