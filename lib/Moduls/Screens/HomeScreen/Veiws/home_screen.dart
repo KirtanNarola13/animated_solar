@@ -91,28 +91,41 @@ class HomeScreen extends StatelessWidget {
                           .toList();
 
                       return ListView.builder(
+                        physics: const AlwaysScrollableScrollPhysics(),
+                        scrollDirection: Axis.horizontal,
                         itemBuilder: (ctx, i) {
                           return Container(
-                            padding: const EdgeInsets.only(left: 30, right: 30),
+                            padding: const EdgeInsets.only(left: 10, right: 10),
                             margin: const EdgeInsets.all(10),
-                            height: h / 2,
+                            width: w / 1.2,
                             child: Stack(
-                              alignment: const Alignment(0, -0.6),
+                              alignment: const Alignment(0, -0.8),
                               children: [
                                 Column(
-                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Container(
-                                      height: h / 4,
+                                      padding: EdgeInsets.only(top: 100),
+                                      height: h / 3,
+                                      width: w / 1,
                                       decoration: BoxDecoration(
                                           color: Colors.white,
                                           borderRadius:
                                               BorderRadius.circular(20)),
+                                      child: Column(
+                                        children: [
+                                          Text(
+                                            "Explore",
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                        ],
+                                      ),
                                     ),
                                     Align(
                                       child: Container(
                                         height: h / 15,
-                                        decoration: BoxDecoration(
+                                        decoration: const BoxDecoration(
                                           shape: BoxShape.circle,
                                           color: Colors.white,
                                         ),
@@ -121,7 +134,7 @@ class HomeScreen extends StatelessWidget {
                                   ],
                                 ),
                                 Container(
-                                  height: h / 4.5,
+                                  height: h / 4,
                                   child: Image.asset(allData[i].image),
                                 ),
                               ],
