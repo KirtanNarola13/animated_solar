@@ -1,8 +1,8 @@
-![s10](https://github.com/KirtanNarola13/animated_solar/assets/133342879/1ad161a5-7f26-4de5-8cc8-f4370d9bd3a5)=> Project Definition: Galaxy Planets (Animator)
+
 
 => Project Description:
 
-   - "Galaxy Planets (Animator)" is an exciting mobile application built using Flutter, focusing on
+   - "SUNPARK (Animator)" is an exciting mobile application built using Flutter, focusing on
   creating captivating animations. The app incorporates concepts such as Implicit Animation and
   Explicit Animation, along with additional features like Shared Preferences and Local JSON
   Bank. It offers a range of functionalities designed to provide users with an immersive and
