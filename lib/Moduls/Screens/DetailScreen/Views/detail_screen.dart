@@ -18,18 +18,31 @@ class _DetailScreenState extends State<DetailScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(allData.name),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Image.asset('lib/Assets/Back_Arrow.png'),
+        ),
       ),
       body: Column(
         children: [
           Expanded(
-            child: Container(
-              child: Hero(
-                tag: 'h',
-                child: Container(
-                  height: h / 3.5,
-                  child: Image.asset(allData.image),
+            child: Row(
+              children: [
+                Text(
+                  allData.position,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.grey.withOpacity(0.5),
+                    fontStyle: FontStyle.italic,
+                    fontSize: 280,
+                  ),
                 ),
-              ),
+                SizedBox(
+                  width: h / 100,
+                ),
+              ],
             ),
           ),
           Expanded(

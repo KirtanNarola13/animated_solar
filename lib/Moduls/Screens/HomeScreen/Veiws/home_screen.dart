@@ -277,12 +277,9 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                     },
                                     child: AnimatedBuilder(
                                       animation: animationController,
-                                      child: Hero(
-                                        tag: 'h',
-                                        child: Container(
-                                          height: h / 3.5,
-                                          child: Image.asset(allData[i].image),
-                                        ),
+                                      child: Container(
+                                        height: h / 3.5,
+                                        child: Image.asset(allData[i].image),
                                       ),
                                       builder: (context, child) {
                                         return Transform.translate(
