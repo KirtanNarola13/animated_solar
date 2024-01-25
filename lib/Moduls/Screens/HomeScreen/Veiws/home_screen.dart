@@ -158,141 +158,149 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                           physics: const AlwaysScrollableScrollPhysics(),
                           scrollDirection: Axis.horizontal,
                           itemBuilder: (ctx, i) {
-                            return Container(
-                              padding:
-                                  const EdgeInsets.only(left: 10, right: 10),
-                              margin: const EdgeInsets.all(10),
-                              width: w / 1.2,
-                              child: Stack(
-                                alignment: const Alignment(0, -0.9),
-                                children: [
-                                  Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Container(
-                                        padding: const EdgeInsets.only(
-                                            top: 70, left: 20, right: 20),
-                                        height: h / 3,
-                                        width: w / 1,
-                                        decoration: BoxDecoration(
-                                            color: Colors.white,
-                                            borderRadius:
-                                                BorderRadius.circular(20)),
-                                        child: Stack(
-                                          alignment: const Alignment(0, 1.8),
-                                          children: [
-                                            Container(
-                                              alignment: Alignment.center,
-                                              child: Stack(
-                                                children: [
-                                                  Align(
-                                                    alignment:
-                                                        Alignment.topCenter,
-                                                    child: Row(
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .spaceBetween,
+                            return GestureDetector(
+                              onTap: () {
+                                Navigator.pushNamed(context, 'detail_screen',
+                                    arguments: allData[i]);
+                              },
+                              child: Container(
+                                padding:
+                                    const EdgeInsets.only(left: 10, right: 10),
+                                margin: const EdgeInsets.all(10),
+                                width: w / 1.2,
+                                child: Stack(
+                                  alignment: const Alignment(0, -0.9),
+                                  children: [
+                                    Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Container(
+                                          padding: const EdgeInsets.only(
+                                              top: 70, left: 20, right: 20),
+                                          height: h / 3,
+                                          width: w / 1,
+                                          decoration: BoxDecoration(
+                                              color: Colors.white,
+                                              borderRadius:
+                                                  BorderRadius.circular(20)),
+                                          child: Stack(
+                                            alignment: const Alignment(0, 1.8),
+                                            children: [
+                                              Container(
+                                                alignment: Alignment.center,
+                                                child: Stack(
+                                                  children: [
+                                                    Align(
+                                                      alignment:
+                                                          Alignment.topCenter,
+                                                      child: Row(
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .spaceBetween,
+                                                        children: [
+                                                          SizedBox(
+                                                            width: w / 10,
+                                                          ),
+                                                          Text(
+                                                            allData[i].position,
+                                                            style: TextStyle(
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold,
+                                                              color: Colors.grey
+                                                                  .withOpacity(
+                                                                      0.5),
+                                                              fontStyle:
+                                                                  FontStyle
+                                                                      .italic,
+                                                              fontSize: 180,
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                    Column(
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .start,
                                                       children: [
-                                                        SizedBox(
-                                                          width: w / 10,
+                                                        Text(
+                                                          "Explore",
+                                                          style: TextStyle(
+                                                              color: Color(int
+                                                                  .parse(allData[
+                                                                          i]
+                                                                      .color)),
+                                                              fontSize: 35),
                                                         ),
                                                         Text(
-                                                          allData[i].position,
+                                                          allData[i].name,
                                                           style: TextStyle(
-                                                            fontWeight:
-                                                                FontWeight.bold,
-                                                            color: Colors.grey
-                                                                .withOpacity(
-                                                                    0.5),
-                                                            fontStyle: FontStyle
-                                                                .italic,
-                                                            fontSize: 180,
-                                                          ),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ),
-                                                  Column(
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment
-                                                            .start,
-                                                    children: [
-                                                      Text(
-                                                        "Explore",
-                                                        style: TextStyle(
                                                             color: Color(int
                                                                 .parse(allData[
                                                                         i]
                                                                     .color)),
-                                                            fontSize: 35),
-                                                      ),
-                                                      Text(
-                                                        allData[i].name,
-                                                        style: TextStyle(
-                                                          color: Color(
-                                                              int.parse(
-                                                                  allData[i]
-                                                                      .color)),
-                                                          fontSize: 25,
-                                                          fontStyle:
-                                                              FontStyle.italic,
+                                                            fontSize: 25,
+                                                            fontStyle: FontStyle
+                                                                .italic,
+                                                          ),
                                                         ),
-                                                      ),
-                                                      SizedBox(
-                                                        height: h / 30,
-                                                      ),
-                                                      Text(
-                                                        allData[i].description,
-                                                        style: const TextStyle(
-                                                          fontSize: 16,
+                                                        SizedBox(
+                                                          height: h / 30,
                                                         ),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ],
+                                                        Text(
+                                                          allData[i]
+                                                              .description,
+                                                          style:
+                                                              const TextStyle(
+                                                            fontSize: 16,
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ],
+                                                ),
                                               ),
-                                            ),
-                                            Container(
-                                              height: h / 11,
-                                              decoration: const BoxDecoration(
-                                                shape: BoxShape.circle,
-                                                color: Colors.white,
+                                              Container(
+                                                height: h / 11,
+                                                decoration: const BoxDecoration(
+                                                  shape: BoxShape.circle,
+                                                  color: Colors.white,
+                                                ),
+                                                child: GestureDetector(
+                                                  onTap: () {},
+                                                  child: Image.asset(
+                                                      "lib/Assets/Button.png"),
+                                                ),
                                               ),
-                                              child: GestureDetector(
-                                                onTap: () {},
-                                                child: Image.asset(
-                                                    "lib/Assets/Button.png"),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  GestureDetector(
-                                    onTap: () {
-                                      Navigator.pushNamed(
-                                          context, 'detail_screen',
-                                          arguments: allData[i]);
-                                    },
-                                    child: AnimatedBuilder(
-                                      animation: animationController,
-                                      child: Container(
-                                        height: h / 3.5,
-                                        child: Image.asset(allData[i].image),
-                                      ),
-                                      builder: (context, child) {
-                                        return Transform.translate(
-                                          offset: offsetFirstAnimation.value,
-                                          child: Transform.translate(
-                                            offset: offsetSecondAnimation.value,
-                                            child: child,
+                                            ],
                                           ),
-                                        );
-                                      },
+                                        ),
+                                      ],
                                     ),
-                                  ),
-                                ],
+                                    Hero(
+                                      tag: 'planet',
+                                      child: AnimatedBuilder(
+                                        animation: animationController,
+                                        child: Container(
+                                          height: h / 3.5,
+                                          child: Image.asset(allData[i].image),
+                                        ),
+                                        builder: (context, child) {
+                                          return Transform.translate(
+                                            offset: offsetFirstAnimation.value,
+                                            child: Transform.translate(
+                                              offset:
+                                                  offsetSecondAnimation.value,
+                                              child: child,
+                                            ),
+                                          );
+                                        },
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
                             );
                           },
