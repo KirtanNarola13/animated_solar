@@ -30,7 +30,7 @@
   planets, offering quick access to their preferred celestial bodies.
 
 
-  ========================================== SCREEN SHOTS ==========================================
+
   <img src="https://github.com/KirtanNarola13/animated_solar/assets/133342879/dc1ed623-551a-4e79-af37-1c2e049dcf46" width="250">
   <img src="https://github.com/KirtanNarola13/animated_solar/assets/133342879/0dfdfdad-41bf-425d-b666-5f67de4111e4" width="250">
   <img src="https://github.com/KirtanNarola13/animated_solar/assets/133342879/ab6189f8-f704-4700-b344-ec0453dca6f0" width="250">
