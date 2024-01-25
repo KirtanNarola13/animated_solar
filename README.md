@@ -1,5 +1,6 @@
 Ref("https://www.figma.com/file/ziRHGBNMRiUHdsp6uQ9VC4/Solar-System-App-(Community)?type=design&node-id=0-1&mode=design&t=7Sqi64Rex6o3VZo2-0")
 
+
 => Project Description:
 
    - "SUNPARK (Animator)" is an exciting mobile application built using Flutter, focusing on
@@ -28,6 +29,10 @@ Ref("https://www.figma.com/file/ziRHGBNMRiUHdsp6uQ9VC4/Solar-System-App-(Communi
   Users can save specific planet details as favorites, and this information is stored locally using
   Shared Preferences. The app provides a dedicated page where users can view their favorite
   planets, offering quick access to their preferred celestial bodies.
+
+
+https://github.com/KirtanNarola13/animated_solar/assets/133342879/1b7a6801-7626-4f8e-b08d-ff627a063a23
+
 
 
 
