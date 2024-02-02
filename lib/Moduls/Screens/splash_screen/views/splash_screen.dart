@@ -1,43 +1,13 @@
-import 'dart:async';
-
+import 'package:animated_solar/Moduls/Screens/splash_screen/controller/splash_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class SplashScreen extends StatefulWidget {
+class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
 
   @override
-  State<SplashScreen> createState() => _SplashScreenState();
-}
-
-class _SplashScreenState extends State<SplashScreen>
-    with TickerProviderStateMixin {
-  late AnimationController animationController;
-  @override
-  void initState() {
-    animationController = AnimationController(
-      vsync: this,
-      duration: const Duration(seconds: 5),
-      lowerBound: 0,
-      upperBound: 1,
-    );
-    animationController.forward();
-
-    animationController.addListener(() {
-      setState(() {});
-    });
-    Timer(
-      Duration(seconds: 3),
-      () {
-        Navigator.pushReplacementNamed(context, 'intro_screen');
-        animationController.dispose();
-      },
-    );
-
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
+    SplashController splashController = Get.put(SplashController());
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
@@ -54,9 +24,11 @@ class _SplashScreenState extends State<SplashScreen>
         child: Column(
           children: [
             Expanded(
-              child: Transform.rotate(
-                angle: animationController.value,
-                child: Image.asset('lib/Assets/splash.png'),
+              child: GetBuilder<SplashController>(
+                builder: (controller) => Transform.rotate(
+                  angle: controller.animationController.value ?? 0.0,
+                  child: Image.asset('lib/Assets/splash.png'),
+                ),
               ),
             ),
             Text(

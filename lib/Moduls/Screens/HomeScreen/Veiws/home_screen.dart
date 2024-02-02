@@ -1,26 +1,22 @@
 import 'dart:convert';
 
+import 'package:animated_solar/Moduls/Screens/HomeScreen/controller/homescreen_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 
 import '../Model/allData.dart';
-
 // Import other packages as needed
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
-  @override
   Widget build(BuildContext context) {
-    myAnimation();
+    HomeScreenController homeScreenController = Get.put(HomeScreenController());
+
     double h = MediaQuery.of(context).size.height;
     double w = MediaQuery.of(context).size.width;
-    myAnimation();
     return Hero(
       tag: 'bg',
       child: Container(
@@ -124,13 +120,14 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                         children: [
                                           Container(
                                             padding: const EdgeInsets.only(
-                                                top: 70, left: 20, right: 20),
+                                                top: 50, left: 20, right: 20),
                                             height: h / 3,
                                             width: w / 1,
                                             decoration: BoxDecoration(
-                                                color: Colors.white,
-                                                borderRadius:
-                                                    BorderRadius.circular(20)),
+                                              color: Colors.white,
+                                              borderRadius:
+                                                  BorderRadius.circular(20),
+                                            ),
                                             child: Stack(
                                               alignment:
                                                   const Alignment(0, 1.8),
@@ -178,11 +175,12 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                                           Text(
                                                             "Explore",
                                                             style: TextStyle(
-                                                                color: Color(int
-                                                                    .parse(allData[
-                                                                            i]
-                                                                        .color)),
-                                                                fontSize: 35),
+                                                              color: Color(int
+                                                                  .parse(allData[
+                                                                          i]
+                                                                      .color)),
+                                                              fontSize: 35,
+                                                            ),
                                                           ),
                                                           Text(
                                                             allData[i].name,
@@ -232,17 +230,19 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                         ],
                                       ),
                                       AnimatedBuilder(
-                                        animation: animationController,
+                                        animation: homeScreenController
+                                            .animationController,
                                         child: Container(
                                           height: h / 3.5,
                                           child: Image.asset(allData[i].image),
                                         ),
                                         builder: (context, child) {
                                           return Transform.translate(
-                                            offset: offsetFirstAnimation.value,
+                                            offset: homeScreenController
+                                                .offsetFirstAnimation.value,
                                             child: Transform.translate(
-                                              offset:
-                                                  offsetSecondAnimation.value,
+                                              offset: homeScreenController
+                                                  .offsetSecondAnimation.value,
                                               child: child,
                                             ),
                                           );

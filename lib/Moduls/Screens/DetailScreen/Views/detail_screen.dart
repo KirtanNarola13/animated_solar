@@ -1,14 +1,9 @@
 import 'package:animated_solar/Moduls/Screens/HomeScreen/Model/allData.dart';
 import 'package:flutter/material.dart';
 
-class DetailScreen extends StatefulWidget {
+class DetailScreen extends StatelessWidget {
   const DetailScreen({super.key});
 
-  @override
-  State<DetailScreen> createState() => _DetailScreenState();
-}
-
-class _DetailScreenState extends State<DetailScreen> {
   @override
   Widget build(BuildContext context) {
     AllData allData = ModalRoute.of(context)?.settings.arguments as AllData;
