@@ -1,3 +1,5 @@
+<img src="https://github.com/user-attachments/assets/45c150fc-9713-46cc-8d44-dcdcfe1438d1">
+
 Ref("https://www.figma.com/file/ziRHGBNMRiUHdsp6uQ9VC4/Solar-System-App-(Community)?type=design&node-id=0-1&mode=design&t=7Sqi64Rex6o3VZo2-0")
 
 
